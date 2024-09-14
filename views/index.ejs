@@ -1,0 +1,83 @@
+<!-- views/index.ejs -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Citt x Contru</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-3">
+        <div class="card">
+          <div class="card-header">
+          <h1 class="mt-5">Datos del Sensor</h1>
+          </div>
+          <div class="card-body">
+            <table class="table-responsive table-bordered mt-3">
+              <thead>
+              <tr>
+                <th>X (mm)</th>
+                <th>Y (mm)</th>
+                <th>Z (mm)</th>
+                <th>Roll(°)</th>
+                <th>Pitch(°)</th>
+                <th>Timestamp</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% data.forEach(row => { %>
+                <tr>
+                  <td><%= row.px.toFixed(2) %></td>
+                  <td><%= row.py.toFixed(2) %></td>
+                  <td><%= row.pz.toFixed(2) %></td>
+                  <td><%= row.roll.toFixed(2) %></td>
+                  <td><%= row.pitch.toFixed(2) %></td>
+                  <td><%= new Date(row.timestamp).toLocaleString('es-CL',{dateStyle:'short' ,timeStyle:'short' ,hour12:false}) %></td>
+                </tr>
+                <% }) %>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-3">
+        <div class="card">
+          <div class="card-header">
+            <h1>Grafica desplaz X</h1>
+          </div>
+          <div class="card-body">
+            a
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-3">
+        <div class="card">
+          <div class="card-header">
+            <h1>Grafica desplaz Y</h1>
+          </div>
+          <div class="card-body">
+            a
+          </div>
+        </div>
+      </div>
+    
+      <div class="col-3">
+        <div class="card">
+          <div class="card-header">
+            <h1>Grafica desplaz Z</h1>
+          </div>
+          <div class="card-body">
+            A
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
